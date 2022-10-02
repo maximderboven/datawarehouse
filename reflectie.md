@@ -13,7 +13,7 @@ Transformatie was even zoeken. Elementen met dezelfde naam (simpledata) maakte h
 De dimensies zijn, na het volgen van de tutorial videos, toch ingewikkeld. Het is even wennen aan het DI programma Talend. De Date en lock Dimensie gingen goed. Voor het weer was het even zoeken wat er precies gevraagd werd. Ook het toevoegen van een extra rij bij Locks en Weather was even zoeken hoe je dit kon doen met tRowGenerator of een excel en deze mergen met de tmap uit de operational server. De SCD van Customers was ook duidelijk door de tutorial.
 We zijn ook al aan de fact gekomen en hier zijn we op heel veel null data gestoten, we weten ook niet goed hoe we lookup moeten doen naar de Weather dimensie adhv de geschiedenis. Ook de duurtijd van de rides is negatief omdat het startpunt (2015) na het eindpunt (2012) ligt.  
 
-** Struikelblokken:  **
+**Struikelblokken:**
 - Varbinary ipv image bij de start en endpoint van de fact  
 - Aanmaken van de SCD tabel zelf in de sql server  
 - Alleen Inline Ifs lukken op expressions   
@@ -23,7 +23,14 @@ We zijn ook al aan de fact gekomen en hier zijn we op heel veel null data gestot
 - 1 rij erbij krijgen en mergen  
 - 1 rij bij locks dimensie met slot was ook onduidelijk (uiteindelijk gewoon allemaal NULL waarden in gemaakt en additional info)  
 - Bij de backup zat al user DB3 zonder password, maar talend aanvaard geen users zonder login.  
-- De Context vars waren even zoeken omdat ze pas op het einde vermeld werden  
+- De Context vars waren even zoeken omdat ze pas op het einde vermeld werden   
+  
+**Status:**  
+Transformatie: 90%  
+ETL DWH Dimensies: 85%  
+ETL DWH Feit & Analyse: 55%  
+Optimalisatie: 0%  
+NOSQL Databank: 0%  
 ### Zelfreflectie (na feedbackmoment)
 **Wat gaat er goed en minder goed**  
   
