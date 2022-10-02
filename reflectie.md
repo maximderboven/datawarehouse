@@ -11,7 +11,7 @@
 ### Vooruitgang (voor feedbackmoment)
 Transformatie was even zoeken. Elementen met dezelfde naam (simpledata) maakte het moeilijker om deze te selecteren.  
 De dimensies zijn, na het volgen van de tutorial videos, toch ingewikkeld. Het is even wennen aan het DI programma Talend. De Date en lock Dimensie gingen goed. Voor het weer was het even zoeken wat er precies gevraagd werd. Ook het toevoegen van een extra rij bij Locks en Weather was even zoeken hoe je dit kon doen met tRowGenerator of een excel en deze mergen met de tmap uit de operational server. De SCD van Customers was ook duidelijk door de tutorial.
-We zijn ook al aan de fact gekomen en hier zijn we op heel veel null data gestoten, we weten ook niet goed hoe we lookup moeten doen naar de Weather dimensie adhv de geschiedenis. Ook de duurtijd van de rides is negatief omdat het startpunt (2012) voor het eindpunt (2015) ligt.  
+We zijn ook al aan de fact gekomen en hier zijn we op heel veel null data gestoten, we weten ook niet goed hoe we lookup moeten doen naar de Weather dimensie adhv de geschiedenis. Ook de duurtijd van de rides is negatief omdat het startpunt (2015) na het eindpunt (2012) ligt.  
 
 ** Struikelblokken:  **
 - Varbinary ipv image bij de start en endpoint van de fact  
