@@ -2,9 +2,9 @@
 
 ### Vragen doorheen de periode:
 ~~1. Hoe extra rij toevoegen~~  
-~~2. Data uit trowgenerator koppelen aan datum dim~~
-3. de afstand berekenen gewoon in sql ?  
-4. Hoe rekening houden met SCD in fact ? (nu met active == true)  
+~~2. Data uit trowgenerator koppelen aan datum dim~~  
+~~3. de afstand berekenen gewoon in sql ?~~  
+~~4. Hoe rekening houden met SCD in fact ? (nu met active == true)~~  
 
 
 ## Milestone #1
@@ -31,12 +31,26 @@ ETL DWH Dimensies: 85%
 ETL DWH Feit & Analyse: 55%  
 Optimalisatie: 0%  
 NOSQL Databank: 0%  
-### Zelfreflectie (na feedbackmoment)
-**Wat gaat er goed en minder goed**  
+### Zelfreflectie (na feedbackmoment)   
+**Reflectie**  
+Zeker de fact tabel nog eens bekijken en opsplitsen, aantal vragen zijn beantwoord en zijn nu duidelijker. We waren goed bezig, dit tempo vasthouden.  
+   
+**Todo's, Advies en waarschuwingen**  
+*Transformatie (xsl):*  
+join maken en tabel maken om te vergelijken, en kijken of het er 301 zijn  
+wordt it die placemark count niet overgeslagen na een if  
+for loop met condition voor counter bij te houden ipv placemark  
   
-**Todo's**  
+*DWH (dimensies):*  
+Alle dimensies waren in orde
   
-**Advies en waarschuwingen**  
+*DWH (feit):*  
+De koppeling tussen feit en dimCustomers kun je nog beter maken door start en eind datum van de rit tussen de subscription als expressie te gebruiken  
+De koppeling tussen feit (weatherhistory) en dimWeather mag je gewoon met de fk doen  
+Feit tabel opspliten met koppeling (FKs) tussen dimensies.  
+Er ontbreken ook enkele waarden (NULL) die er niet mogen zijn.  
+Analysevragen beantwoorden mag met SQL statement  
+Afstandberekenen mag in het SELECT statement  
   
 
 ## Milestone #2
