@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
-  <TalendMetadata:DelimitedFileConnection xmi:id="_-ecAIEF4Ee2g7q_rcPnVfw" name="weertypes" dataPackage="_-ecAIUF4Ee2g7q_rcPnVfw" Server="Localhost 127.0.0.1" FilePath="C:/Users/maxim/Desktop/weertypes.csv" Encoding="US-ASCII" FieldSeparatorValue="&quot;;&quot;" RowSeparatorValue="&quot;\n&quot;" EscapeType="CSV" CsvOption="true"/>
+  <TalendMetadata:DelimitedFileConnection xmi:id="_-ecAIEF4Ee2g7q_rcPnVfw" name="weertypes" id="_-eTdQEF4Ee2g7q_rcPnVfw" dataPackage="_-ecAIUF4Ee2g7q_rcPnVfw" Server="Localhost 127.0.0.1" FilePath="C:/Users/maxim/Desktop/projectfiles/datawarehouse/weertypes.csv" Encoding="US-ASCII" FieldSeparatorValue="&quot;;&quot;" RowSeparatorValue="&quot;\n&quot;" EscapeType="CSV" CsvOption="true"/>
   <orgomg.cwm.resource.record:RecordFile xmi:id="_-ecAIUF4Ee2g7q_rcPnVfw" name="default" dataManager="_-ecAIEF4Ee2g7q_rcPnVfw">
     <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_-ecAIkF4Ee2g7q_rcPnVfw" id="_2wCKAEF4Ee2g7q_rcPnVfw" label="metadata">
       <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_-ecAI0F4Ee2g7q_rcPnVfw" label="weertype" length="17" talendType="id_String" key="true" pattern="&quot;dd-MM-yyyy&quot;"/>
