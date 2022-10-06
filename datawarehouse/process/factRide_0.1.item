@@ -43,7 +43,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:ibhK+TziV6Np3CWqIJP+pbwHux3fZ6DGeBEDlt5o" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:AtAByjLjAvBgqw3mb0jYy/kDoFraRhsfp9P6nUh/" show="false"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
@@ -78,7 +78,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:/3wipVAhC4/zeNVP+GtPZdkcUxyKL0Coe7jelKRS" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:wG5i9sNz5zJl633IBYd7y2kgXHCmydqpVQaF+3pk" show="false"/>
     <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
@@ -120,7 +120,7 @@
     <elementParameter field="TEXT" name="DB_SCHEMA" value="&quot;dbo&quot;"/>
     <elementParameter field="TEXT" name="DBNAME" value="&quot;velo_op&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;sa&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:pEaxHT+kWdc5P0Q9GMijVFk3Wb/w7qXyBQekEPQoXGZM0bRHXqO1Rso="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:2jjL+u7emI+oUjlwAzbdzGbyJmRulLhF3V/NNiIGR7zEH/3hvq3NqmM="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;Rides&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -159,11 +159,11 @@
     <elementParameter field="TEXT" name="LABEL" value="VELO_OP"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBInput_2">
-      <column comment="" defaultValue="" key="false" length="19" name="RideId" nullable="false" pattern="" precision="0" sourceType="BIGINT" type="id_Long" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="19" name="RideId" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Long" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="2147483647" name="StartPoint" nullable="true" pattern="" precision="0" sourceType="IMAGE" type="id_Object" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="2147483647" name="EndPoint" nullable="true" pattern="" precision="0" sourceType="IMAGE" type="id_Object" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="23" name="StartTime" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="23" name="EndTime" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="23" name="StartTime" nullable="true" pattern="&quot;yyyy-MM-dd'T'HH:mm:ss.SSSSSS&quot;" precision="3" sourceType="DATETIME" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="23" name="EndTime" nullable="true" pattern="&quot;yyyy-MM-dd'T'HH:mm:ss.SSSSSS&quot;" precision="3" sourceType="DATETIME" type="id_Date" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="5" name="VehicleId" nullable="false" pattern="" precision="0" sourceType="SMALLINT" type="id_Short" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="10" name="SubscriptionId" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="5" name="Startlockid" nullable="true" pattern="" precision="0" sourceType="SMALLINT" type="id_Short" originalLength="-1" usefulColumn="true"/>
@@ -185,33 +185,40 @@
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="factRide" name="factRide">
-      <column comment="" defaultValue="" key="false" length="19" name="RideId" nullable="false" pattern="" precision="0" sourceType="BIGINT" type="id_Long" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="2147483647" name="StartPoint" nullable="true" pattern="" precision="0" sourceType="IMAGE" type="id_Object" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="2147483647" name="EndPoint" nullable="true" pattern="" precision="0" sourceType="IMAGE" type="id_Object" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="23" name="StartTime" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="23" name="EndTime" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="-1" name="WeertypeID" nullable="false" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="5" name="VehicleId" nullable="false" pattern="" precision="0" sourceType="SMALLINT" type="id_Short" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="UserID" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="StartLockID" nullable="false" pattern="" precision="0" sourceType="INT IDENTITY" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="EndLockID" nullable="false" pattern="" precision="0" sourceType="INT IDENTITY" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="19" name="RIDE_ID" nullable="false" pattern="" precision="0" sourceType="BIGINT" type="id_Long" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="2147483647" name="STARTPOINT_MV" nullable="true" pattern="" precision="0" sourceType="IMAGE" type="id_Object" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="2147483647" name="ENDPOINT_MV" nullable="true" pattern="" precision="0" sourceType="IMAGE" type="id_Object" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="23" name="STARTTIME_MV" nullable="false" pattern="&quot;yyyy-MM-dd'T'HH:mm:ss.SSSSSS&quot;" precision="3" sourceType="DATETIME" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="23" name="ENDTIME_MV" nullable="false" pattern="&quot;yyyy-MM-dd'T'HH:mm:ss.SSSSSS&quot;" precision="3" sourceType="DATETIME" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="23" name="DURATION_MV" nullable="false" pattern="&quot;yyyy-MM-dd'T'HH:mm:ss.SSSSSS&quot;" precision="3" sourceType="" type="id_Long" originalLength="23" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="DIM_WEERTYPE_SK" nullable="false" pattern="" precision="0" sourceType="" type="id_Integer" originalLength="10" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="5" name="VEHICLE_ID" nullable="false" pattern="" precision="0" sourceType="SMALLINT" type="id_Short" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="START_DIM_LOCK_SK" nullable="true" pattern="" precision="0" sourceType="INT IDENTITY" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="END_DIM_LOCK_SK" nullable="true" pattern="" precision="0" sourceType="INT IDENTITY" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="DIM_DATE_SK" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="COUNT_MV" nullable="false" pattern="" precision="0" sourceType="" type="id_Integer" originalLength="10" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="DIM_USER_SK" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
       <varTables sizeState="INTERMEDIATE" name="Var">
         <mapperTableEntries name="WeertypeID" expression="(WEERHISTORIEK.id == null) ? 1 : &#xD;&#xA;(((WEERHISTORIEK.id >= 200 &amp;&amp; WEERHISTORIEK.id &lt; 500) || (WEERHISTORIEK.id >= 600 &amp;&amp; WEERHISTORIEK.id &lt; 800)) ? 4 : &#xD;&#xA;((WEERHISTORIEK.temp >= 15) ? 3 : 2)); " type="id_Integer"/>
+        <mapperTableEntries name="count" expression="1" type="id_Integer"/>
       </varTables>
-      <outputTables sizeState="INTERMEDIATE" name="factRide">
-        <mapperTableEntries name="RideId" expression="RIDES.RideId " type="id_Long"/>
-        <mapperTableEntries name="StartPoint" expression="RIDES.StartPoint " type="id_Object" nullable="true"/>
-        <mapperTableEntries name="EndPoint" expression="RIDES.EndPoint " type="id_Object" nullable="true"/>
-        <mapperTableEntries name="StartTime" expression="RIDES.StartTime " type="id_Date" nullable="true"/>
-        <mapperTableEntries name="EndTime" expression="RIDES.EndTime " type="id_Date" nullable="true"/>
-        <mapperTableEntries name="WeertypeID" expression="Var.WeertypeID " type="id_Integer"/>
-        <mapperTableEntries name="VehicleId" expression="RIDES.VehicleId " type="id_Short"/>
-        <mapperTableEntries name="UserID" expression="CUSTOMERS.userRepSK " type="id_Integer"/>
-        <mapperTableEntries name="StartLockID" expression="LOCKS.LockSK " type="id_Integer"/>
-        <mapperTableEntries name="EndLockID" expression="LOCKS.LockSK " type="id_Integer"/>
+      <outputTables sizeState="INTERMEDIATE" name="factRide" expressionFilter="(RIDES.SubscriptionId != null) ? ((CUSTOMERS.scd_start.before(RIDES.EndTime) || CUSTOMERS.scd_start.equals(RIDES.EndTime)) &amp;&amp; RIDES.EndTime.before(CUSTOMERS.scd_end)) : true" activateExpressionFilter="true">
+        <mapperTableEntries name="RIDE_ID" expression="RIDES.RideId " type="id_Long"/>
+        <mapperTableEntries name="STARTPOINT_MV" expression="RIDES.StartPoint " type="id_Object" nullable="true"/>
+        <mapperTableEntries name="ENDPOINT_MV" expression="RIDES.EndPoint " type="id_Object" nullable="true"/>
+        <mapperTableEntries name="STARTTIME_MV" expression="RIDES.StartTime " type="id_Date"/>
+        <mapperTableEntries name="ENDTIME_MV" expression="RIDES.EndTime " type="id_Date"/>
+        <mapperTableEntries name="DURATION_MV" expression="TalendDate.diffDate(RIDES.EndTime,RIDES.StartTime,&quot;SSS&quot;) " type="id_Long"/>
+        <mapperTableEntries name="DIM_WEERTYPE_SK" expression="Var.WeertypeID " type="id_Integer"/>
+        <mapperTableEntries name="VEHICLE_ID" expression="RIDES.VehicleId " type="id_Short"/>
+        <mapperTableEntries name="START_DIM_LOCK_SK" expression="STARTLOCKS.LockSK " type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="END_DIM_LOCK_SK" expression="ENDLOCKS.LockSK " type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="DIM_DATE_SK" expression="DATES.Date_SK " type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="COUNT_MV" expression="Var.count " type="id_Integer"/>
+        <mapperTableEntries name="DIM_USER_SK" expression="CUSTOMERS.userRepSK " type="id_Integer" nullable="true"/>
       </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="RIDES" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="RideId" type="id_Long"/>
@@ -224,53 +231,29 @@
         <mapperTableEntries name="Startlockid" type="id_Short" nullable="true"/>
         <mapperTableEntries name="EndLockId" type="id_Short" nullable="true"/>
       </inputTables>
-      <inputTables sizeState="INTERMEDIATE" name="CUSTOMERS" expressionFilter="CUSTOMERS.scd_active == true" activateExpressionFilter="true" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
+      <inputTables sizeState="INTERMEDIATE" name="CUSTOMERS" minimized="true" activateCondensedTool="true" matchingMode="ALL_MATCHES" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="userRepSK" type="id_Integer"/>
-        <mapperTableEntries name="UserId" type="id_Integer"/>
-        <mapperTableEntries name="Name" type="id_String" nullable="true"/>
-        <mapperTableEntries name="Email" type="id_String" nullable="true"/>
-        <mapperTableEntries name="Street" type="id_String" nullable="true"/>
-        <mapperTableEntries name="Number" type="id_String" nullable="true"/>
-        <mapperTableEntries name="Zipcode" type="id_String" nullable="true"/>
-        <mapperTableEntries name="City" type="id_String" nullable="true"/>
-        <mapperTableEntries name="CountryCode" type="id_String" nullable="true"/>
-        <mapperTableEntries name="ValidFrom" type="id_String"/>
+        <mapperTableEntries name="UserId" expression="" type="id_Integer"/>
         <mapperTableEntries name="SubscriptionId" expression="RIDES.SubscriptionId " type="id_Integer" operator="="/>
-        <mapperTableEntries name="Description" type="id_String" nullable="true"/>
-        <mapperTableEntries name="scd_start" type="id_Date"/>
-        <mapperTableEntries name="scd_end" expression="" type="id_Date" nullable="true"/>
-        <mapperTableEntries name="scd_version" expression="" type="id_Integer"/>
-        <mapperTableEntries name="scd_active" expression="" type="id_Boolean"/>
+        <mapperTableEntries name="scd_start" expression="" type="id_Date"/>
+        <mapperTableEntries name="scd_end" expression="" type="id_Date"/>
       </inputTables>
-      <inputTables sizeState="INTERMEDIATE" name="DATES" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
-        <mapperTableEntries name="Date_SK" expression="Integer.parseInt(TalendDate.formatDate(&quot;yyyyMMdd&quot;,RIDES.StartTime )) " type="id_Integer"/>
-        <mapperTableEntries name="Date" expression="" type="id_Date" nullable="true"/>
-        <mapperTableEntries name="DayOfMonth" type="id_Integer" nullable="true"/>
-        <mapperTableEntries name="Month" type="id_Integer" nullable="true"/>
-        <mapperTableEntries name="Year" type="id_Integer" nullable="true"/>
-        <mapperTableEntries name="DayOfWeek" type="id_Integer" nullable="true"/>
-        <mapperTableEntries name="DayOfYear" type="id_Integer" nullable="true"/>
-        <mapperTableEntries name="Weekday" type="id_String" nullable="true"/>
-        <mapperTableEntries name="MonthName" type="id_String" nullable="true"/>
+      <inputTables sizeState="INTERMEDIATE" name="DATES" activateCondensedTool="true" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
+        <mapperTableEntries name="Date_SK" expression="" type="id_Integer"/>
+        <mapperTableEntries name="Date" expression="Talend.parseDate(&quot;yyyy-MM-dd&quot;,TalendDate.formatDate(&quot;yyyy-MM-dd&quot;,RIDES.StartTime)) " type="id_Date"/>
       </inputTables>
       <inputTables sizeState="INTERMEDIATE" name="WEERHISTORIEK" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
-        <mapperTableEntries name="currentDate" expression="RIDES.StartTime " type="id_Date" nullable="true" operator="="/>
+        <mapperTableEntries name="currentDate" expression="TalendDate.parseDate(&quot;yyyy-MM-dd HH&quot;,TalendDate.formatDate(&quot;yyyy-MM-dd HH&quot;,RIDES.StartTime)) " type="id_Date" operator="="/>
         <mapperTableEntries name="id" expression="" type="id_Integer" nullable="true"/>
-        <mapperTableEntries name="weatherType" expression="" type="id_String" nullable="true"/>
         <mapperTableEntries name="temp" type="id_Float" nullable="true"/>
       </inputTables>
-      <inputTables sizeState="INTERMEDIATE" name="LOCKS" matchingMode="ALL_ROWS" lookupMode="LOAD_ONCE">
+      <inputTables sizeState="INTERMEDIATE" name="STARTLOCKS" minimized="true" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="LockSK" type="id_Integer"/>
-        <mapperTableEntries name="LockId" type="id_Short" nullable="true"/>
-        <mapperTableEntries name="StationLockNr" type="id_Short" nullable="true"/>
-        <mapperTableEntries name="StationId" type="id_Short" nullable="true"/>
-        <mapperTableEntries name="Type" type="id_String" nullable="true"/>
-        <mapperTableEntries name="Street" type="id_String" nullable="true"/>
-        <mapperTableEntries name="Number" type="id_String" nullable="true"/>
-        <mapperTableEntries name="ZipCode" type="id_String" nullable="true"/>
-        <mapperTableEntries name="District" type="id_String" nullable="true"/>
-        <mapperTableEntries name="GPSCoord" type="id_Object" nullable="true"/>
-        <mapperTableEntries name="AdditionalInfo" type="id_String" nullable="true"/>
+        <mapperTableEntries name="LockId" expression="RIDES.Startlockid " type="id_Short" nullable="true"/>
+      </inputTables>
+      <inputTables sizeState="INTERMEDIATE" name="ENDLOCKS" minimized="true" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
+        <mapperTableEntries name="LockSK" type="id_Integer"/>
+        <mapperTableEntries name="LockId" expression="RIDES.EndLockId " type="id_Short" nullable="true"/>
       </inputTables>
     </nodeData>
   </node>
@@ -287,13 +270,13 @@
     <elementParameter field="TEXT" name="DB_SCHEMA" value="&quot;dbo&quot;"/>
     <elementParameter field="TEXT" name="DBNAME" value="&quot;velo_dwh&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;DB3&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:jQCJgmUvOcorhsb1qU3ClAIjWnl2p+6bteo1TURrIWob"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:wUDpaIqn1HxJ6uwWcF8EGAn4MvR5be3cyCnYa+X46xnO"/>
     <elementParameter field="DBTABLE" name="TABLE" value="dimCustomers"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT dbo.dimCustomers.userRepSK,&#xA;&#x9;&#x9;dbo.dimCustomers.UserId,&#xA;&#x9;&#x9;dbo.dimCustomers.Name,&#xA;&#x9;&#x9;dbo.dimCustomers.Email,&#xA;&#x9;&#x9;dbo.dimCustomers.Street,&#xA;&#x9;&#x9;dbo.dimCustomers.Number,&#xA;&#x9;&#x9;dbo.dimCustomers.Zipcode,&#xA;&#x9;&#x9;dbo.dimCustomers.City,&#xA;&#x9;&#x9;dbo.dimCustomers.CountryCode,&#xA;&#x9;&#x9;dbo.dimCustomers.ValidFrom,&#xA;&#x9;&#x9;dbo.dimCustomers.SubscriptionId,&#xA;&#x9;&#x9;dbo.dimCustomers.Description,&#xA;&#x9;&#x9;dbo.dimCustomers.scd_start,&#xA;&#x9;&#x9;dbo.dimCustomers.scd_end,&#xA;&#x9;&#x9;dbo.dimCustomers.scd_version,&#xA;&#x9;&#x9;dbo.dimCustomers.scd_active&#xA;FROM&#x9;dbo.dimCustomers&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT dbo.dimCustomers.userRepSK,&#xA;&#x9;&#x9;dbo.dimCustomers.UserId,&#xA;&#x9;&#x9;dbo.dimCustomers.SubscriptionId,&#xA;&#x9;&#x9;dbo.dimCustomers.scd_start,&#xA;&#x9;&#x9;dbo.dimCustomers.scd_end&#xA;FROM&#x9;dbo.dimCustomers&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
@@ -308,33 +291,11 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="UserId"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Name"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Email"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Street"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Number"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Zipcode"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="City"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CountryCode"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ValidFrom"/>
-      <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="SubscriptionId"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Description"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="scd_start"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="scd_end"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="scd_version"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="scd_active"/>
       <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
     <elementParameter field="TEXT" name="LABEL" value="VELO_DWH"/>
@@ -342,20 +303,9 @@
     <metadata connector="FLOW" name="tDBInput_4">
       <column comment="" defaultValue="" key="false" length="10" name="userRepSK" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="10" name="UserId" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="100" name="Name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="100" name="Email" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="100" name="Street" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="Number" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="Zipcode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="100" name="City" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="3" name="CountryCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="ValidFrom" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="10" name="SubscriptionId" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="Description" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="23" name="scd_start" nullable="false" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="23" name="scd_end" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="scd_version" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="1" name="scd_active" nullable="false" pattern="" precision="0" sourceType="BIT" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="23" name="scd_start" nullable="false" pattern="&quot;yyyy-MM-dd'T'HH:mm:ss.SSSSSS&quot;" precision="3" sourceType="DATETIME" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="23" name="scd_end" nullable="false" pattern="&quot;yyyy-MM-dd'T'HH:mm:ss.SSSSSS&quot;" precision="3" sourceType="DATETIME" type="id_Date" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tMSSqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="288" posY="192">
@@ -371,13 +321,13 @@
     <elementParameter field="TEXT" name="DB_SCHEMA" value="&quot;dbo&quot;"/>
     <elementParameter field="TEXT" name="DBNAME" value="&quot;velo_dwh&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;DB3&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:WQlUFeiWiG2ruuL9YmR9HVlXCXvUK6Iev3UmdOfpGG4/"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:zjcr2p9Pma6t1ZBuOqjctlbyoKC5itVZ1EQAWM7f4S+7"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;dimDate&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT dbo.dimDate.Date_SK,&#xA;&#x9;&#x9;dbo.dimDate.Date,&#xA;&#x9;&#x9;dbo.dimDate.DayOfMonth,&#xA;&#x9;&#x9;dbo.dimDate.\&quot;Month\&quot;,&#xA;&#x9;&#x9;dbo.dimDate.\&quot;Year\&quot;,&#xA;&#x9;&#x9;dbo.dimDate.DayOfWeek,&#xA;&#x9;&#x9;dbo.dimDate.DayOfYear,&#xA;&#x9;&#x9;dbo.dimDate.Weekday,&#xA;&#x9;&#x9;dbo.dimDate.MonthName&#xA;FROM&#x9;dbo.dimDate&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT dbo.dimDate.Date_SK,&#xA;&#x9;&#x9;dbo.dimDate.Date&#xA;FROM&#x9;dbo.dimDate&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
@@ -392,33 +342,12 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="Date"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="DayOfMonth"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Month"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Year"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="DayOfWeek"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="DayOfYear"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Weekday"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="MonthName"/>
-      <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
     <elementParameter field="TEXT" name="LABEL" value="VELO_DWH"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBInput_1">
       <column comment="" defaultValue="" key="false" length="10" name="Date_SK" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="23" name="Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="DayOfMonth" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="Month" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="Year" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="DayOfWeek" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="DayOfYear" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="20" name="Weekday" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="20" name="MonthName" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="23" name="Date" nullable="false" pattern="&quot;yyyy-MM-dd&quot;" precision="3" sourceType="DATETIME" type="id_Date" originalLength="10" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tMSSqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="832" posY="192">
@@ -434,14 +363,14 @@
     <elementParameter field="TEXT" name="DBNAME" value="&quot;velo_dwh&quot;"/>
     <elementParameter field="TEXT" name="TYPE" value="MSSQL" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;DB3&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:LQnHn2lTj5/RNZBJ3P6yVT/htTz2KLe3yOPL2iSUpGl7"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:/miwwJPUw2ZNdwoEsZhUS6x/6vGd6G6IklPwGuPwcaI3"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;factRide&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_IF_EXISTS_AND_CREATE"/>
     <elementParameter field="CHECK" name="IDENTITY_INSERT" value="false"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
     <elementParameter field="LABEL" name="NOTE" value="NOTE: batch size must be less than or equal to total number of parameter markers divided by number of columns" show="false"/>
     <elementParameter field="CHECK" name="SPECIFY_IDENTITY_FIELD" value="false"/>
-    <elementParameter field="COLUMN_LIST" name="IDENTITY_FIELD" value="WeertypeID" show="false"/>
+    <elementParameter field="COLUMN_LIST" name="IDENTITY_FIELD" value="RIDE_ID" show="false"/>
     <elementParameter field="TEXT" name="START_VALUE" value="1" show="false"/>
     <elementParameter field="TEXT" name="STEP" value="1" show="false"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
@@ -459,52 +388,67 @@
     <elementParameter field="TABLE" name="ADD_COLS"/>
     <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="RideId"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="RIDE_ID"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="StartPoint"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="STARTPOINT_MV"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="EndPoint"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ENDPOINT_MV"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="StartTime"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="STARTTIME_MV"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="EndTime"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ENDTIME_MV"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="WeertypeID"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DURATION_MV"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="VehicleId"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DIM_WEERTYPE_SK"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="UserID"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="VEHICLE_ID"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="StartLockID"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="START_DIM_LOCK_SK"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="EndLockID"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="END_DIM_LOCK_SK"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DIM_DATE_SK"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="COUNT_MV"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DIM_USER_SK"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
@@ -518,28 +462,34 @@
     <elementParameter field="TEXT" name="LABEL" value="VELO_DWH"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="factRide" name="tDBOutput_1">
-      <column comment="" defaultValue="" key="false" length="19" name="RideId" nullable="false" pattern="" precision="0" sourceType="BIGINT" type="id_Long" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="2147483647" name="StartPoint" nullable="true" pattern="" precision="0" sourceType="VARBINARY" type="id_Object" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="2147483647" name="EndPoint" nullable="true" pattern="" precision="0" sourceType="VARBINARY" type="id_Object" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="23" name="StartTime" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="23" name="EndTime" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="-1" name="WeertypeID" nullable="false" pattern="" precision="-1" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="5" name="VehicleId" nullable="false" pattern="" precision="0" sourceType="SMALLINT" type="id_Short" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="UserID" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="StartLockID" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="EndLockID" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="19" name="RIDE_ID" nullable="false" pattern="" precision="0" sourceType="BIGINT" type="id_Long" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="2147483647" name="STARTPOINT_MV" nullable="true" pattern="" precision="0" sourceType="VARBINARY" type="id_Object" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="2147483647" name="ENDPOINT_MV" nullable="true" pattern="" precision="0" sourceType="VARBINARY" type="id_Object" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="23" name="STARTTIME_MV" nullable="false" pattern="&quot;yyyy-MM-dd'T'HH:mm:ss.SSSSSS&quot;" precision="3" sourceType="DATETIME" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="23" name="ENDTIME_MV" nullable="false" pattern="&quot;yyyy-MM-dd'T'HH:mm:ss.SSSSSS&quot;" precision="3" sourceType="DATETIME" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="23" name="DURATION_MV" nullable="false" pattern="&quot;yyyy-MM-dd'T'HH:mm:ss.SSSSSS&quot;" precision="3" sourceType="BIGINT" type="id_Long" originalLength="23" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="DIM_WEERTYPE_SK" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="10" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="5" name="VEHICLE_ID" nullable="false" pattern="" precision="0" sourceType="SMALLINT" type="id_Short" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="START_DIM_LOCK_SK" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="END_DIM_LOCK_SK" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="DIM_DATE_SK" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="COUNT_MV" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="10" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="DIM_USER_SK" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" label="factRide" name="REJECT">
-      <column comment="" defaultValue="" key="false" length="19" name="RideId" nullable="false" pattern="" precision="0" sourceType="BIGINT" type="id_Long" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="2147483647" name="StartPoint" nullable="true" pattern="" precision="0" sourceType="VARBINARY" type="id_Object" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="2147483647" name="EndPoint" nullable="true" pattern="" precision="0" sourceType="VARBINARY" type="id_Object" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="23" name="StartTime" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="23" name="EndTime" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="-1" name="WeertypeID" nullable="false" pattern="" precision="-1" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="5" name="VehicleId" nullable="false" pattern="" precision="0" sourceType="SMALLINT" type="id_Short" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="UserID" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="StartLockID" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="EndLockID" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="19" name="RIDE_ID" nullable="false" pattern="" precision="0" sourceType="BIGINT" type="id_Long" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="2147483647" name="STARTPOINT_MV" nullable="true" pattern="" precision="0" sourceType="VARBINARY" type="id_Object" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="2147483647" name="ENDPOINT_MV" nullable="true" pattern="" precision="0" sourceType="VARBINARY" type="id_Object" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="23" name="STARTTIME_MV" nullable="false" pattern="&quot;yyyy-MM-dd'T'HH:mm:ss.SSSSSS&quot;" precision="3" sourceType="DATETIME" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="23" name="ENDTIME_MV" nullable="false" pattern="&quot;yyyy-MM-dd'T'HH:mm:ss.SSSSSS&quot;" precision="3" sourceType="DATETIME" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="23" name="DURATION_MV" nullable="false" pattern="&quot;yyyy-MM-dd'T'HH:mm:ss.SSSSSS&quot;" precision="3" sourceType="BIGINT" type="id_Long" originalLength="23" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="DIM_WEERTYPE_SK" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="10" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="5" name="VEHICLE_ID" nullable="false" pattern="" precision="0" sourceType="SMALLINT" type="id_Short" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="START_DIM_LOCK_SK" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="END_DIM_LOCK_SK" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="DIM_DATE_SK" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="COUNT_MV" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="10" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="DIM_USER_SK" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
@@ -557,13 +507,13 @@
     <elementParameter field="TEXT" name="DB_SCHEMA" value="&quot;dbo&quot;"/>
     <elementParameter field="TEXT" name="DBNAME" value="&quot;velo_op&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;sa&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:EDIJ077IWcAZlw2GPlsIfwrupDqzK+beycq4ridQOH9JQIGKCS5vYlY="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:DnOV0XW3/9AwbGUqAjLPQL5aY1J6fCZDqxE5HfpoWO3O/SZUQYm7uFI="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;Weerhistoriek &quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT dbo.\&quot;Weerhistoriek \&quot;.currentDate,&#xA;&#x9;&#x9;dbo.\&quot;Weerhistoriek \&quot;.\&quot;id\&quot;,&#xA;&#x9;&#x9;dbo.\&quot;Weerhistoriek \&quot;.weatherType,&#xA;&#x9;&#x9;dbo.\&quot;Weerhistoriek \&quot;.\&quot;temp\&quot;&#xA;FROM&#x9;dbo.\&quot;Weerhistoriek \&quot;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT dbo.\&quot;Weerhistoriek \&quot;.currentDate,&#xA;&#x9;&#x9;dbo.\&quot;Weerhistoriek \&quot;.\&quot;id\&quot;,&#xA;&#x9;&#x9;dbo.\&quot;Weerhistoriek \&quot;.\&quot;temp\&quot;&#xA;FROM&#x9;dbo.\&quot;Weerhistoriek \&quot;&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
@@ -578,17 +528,14 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="id"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="weatherType"/>
-      <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="temp"/>
       <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
     <elementParameter field="TEXT" name="LABEL" value="VELO_OP"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBInput_6">
-      <column comment="" key="false" length="23" name="currentDate" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="20" name="id" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="20" name="weatherType" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="23" name="currentDate" nullable="false" pattern="&quot;yyyy-MM-dd HH&quot;" precision="3" sourceType="DATETIME" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="id" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="7" name="temp" nullable="true" pattern="" precision="0" sourceType="REAL" type="id_Float" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
@@ -605,13 +552,13 @@
     <elementParameter field="TEXT" name="DB_SCHEMA" value="&quot;dbo&quot;"/>
     <elementParameter field="TEXT" name="DBNAME" value="&quot;velo_dwh&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;DB3&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:nRb9Fq9NZzH1MnrGzEG4HCJdzb3w64LsbOk7m8NMD/7v"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:WhA7bMNfp6imWYzeqcuDR0+GKbTZgafKQjZ2fuqHiaXa"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;dimLocks&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT dbo.dimLocks.LockSK,&#xA;&#x9;&#x9;dbo.dimLocks.LockId,&#xA;&#x9;&#x9;dbo.dimLocks.StationLockNr,&#xA;&#x9;&#x9;dbo.dimLocks.StationId,&#xA;&#x9;&#x9;dbo.dimLocks.Type,&#xA;&#x9;&#x9;dbo.dimLocks.Street,&#xA;&#x9;&#x9;dbo.dimLocks.Number,&#xA;&#x9;&#x9;dbo.dimLocks.ZipCode,&#xA;&#x9;&#x9;dbo.dimLocks.District,&#xA;&#x9;&#x9;dbo.dimLocks.GPSCoord,&#xA;&#x9;&#x9;dbo.dimLocks.AdditionalInfo&#xA;FROM&#x9;dbo.dimLocks&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT dbo.dimLocks.LockSK,&#xA;&#x9;&#x9;dbo.dimLocks.LockId&#xA;FROM&#x9;dbo.dimLocks&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
@@ -626,39 +573,54 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="LockId"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="StationLockNr"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="StationId"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Type"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Street"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Number"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ZipCode"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="District"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="GPSCoord"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="AdditionalInfo"/>
-      <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
     <elementParameter field="TEXT" name="LABEL" value="VELO_DWH"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBInput_3">
-      <column comment="" defaultValue="" key="false" length="10" name="LockSK" nullable="false" pattern="" precision="0" sourceType="INT IDENTITY" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="LockSK" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="5" name="LockId" nullable="true" pattern="" precision="0" sourceType="SMALLINT" type="id_Short" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="3" name="StationLockNr" nullable="true" pattern="" precision="0" sourceType="TINYINT" type="id_Short" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="5" name="StationId" nullable="true" pattern="" precision="0" sourceType="SMALLINT" type="id_Short" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="20" name="Type" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="100" name="Street" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="Number" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="ZipCode" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="100" name="District" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="2147483647" name="GPSCoord" nullable="true" pattern="" precision="0" sourceType="IMAGE" type="id_Object" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="100" name="AdditionalInfo" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tMSSqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="384" posY="416">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_5" show="false"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_rdCOQD2zEe2FOblneZpIag" show="false"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;localhost&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="DRIVER" value="JTDS"/>
+    <elementParameter field="TEXT" name="TYPE" value="MSSQL" show="false"/>
+    <elementParameter field="TEXT" name="PORT" value="&quot;1433&quot;"/>
+    <elementParameter field="TEXT" name="DB_SCHEMA" value="&quot;dbo&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;velo_dwh&quot;"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;DB3&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:0G/UhYBynJBjvxEEkq3tko7l4u4XKHv0roPP6FoIn0+X"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;dimLocks&quot;"/>
+    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
+    <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT dbo.dimLocks.LockSK,&#xA;&#x9;&#x9;dbo.dimLocks.LockId&#xA;FROM&#x9;dbo.dimLocks&quot;"/>
+    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="id_MSSQL" show="false"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="ACTIVE_DIR_AUTH" value="false" show="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
+    <elementParameter field="TABLE" name="TRIM_COLUMN">
+      <elementValue elementRef="SCHEMA_COLUMN" value="LockSK"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="LockId"/>
+      <elementValue elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="LABEL" value="VELO_DWH"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tDBInput_5">
+      <column comment="" defaultValue="" key="false" length="10" name="LockSK" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="5" name="LockId" nullable="true" pattern="" precision="0" sourceType="SMALLINT" type="id_Short" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
   <connection connectorName="FLOW" label="RIDES" lineStyle="0" metaname="tDBInput_2" offsetLabelX="0" offsetLabelY="0" source="tDBInput_2" target="tMap_1">
@@ -718,6 +680,45 @@
       <elementValue elementRef="TRACE_COLUMN" value="EndLockID"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="ENDTIME_MV"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="COUNT_MV"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="END_DIM_LOCK_SK"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="ENDPOINT_MV"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="VEHICLE_ID"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="START_DIM_LOCK_SK"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="DIM_USER_SK"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="STARTPOINT_MV"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="STARTTIME_MV"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="DIM_DATE_SK"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="RIDE_ID"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="DIM_WEERTYPE_SK"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="DURATION_MV"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="factRide" show="false"/>
@@ -734,9 +735,13 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="WEERHISTORIEK" show="false"/>
   </connection>
-  <connection connectorName="FLOW" label="LOCKS" lineStyle="8" metaname="tDBInput_3" offsetLabelX="0" offsetLabelY="0" source="tDBInput_3" target="tMap_1">
+  <connection connectorName="FLOW" label="STARTLOCKS" lineStyle="8" metaname="tDBInput_3" offsetLabelX="0" offsetLabelY="0" source="tDBInput_3" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="LOCKS" show="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="STARTLOCKS" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="ENDLOCKS" lineStyle="8" metaname="tDBInput_5" offsetLabelX="0" offsetLabelY="0" source="tDBInput_5" target="tMap_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="ENDLOCKS" show="false"/>
   </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_2" show="false"/>
