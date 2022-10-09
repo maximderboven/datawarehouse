@@ -29,7 +29,7 @@
 						<xsl:value-of select="substring-before(../../../Point/coordinates, ',')"/>
 						<xsl:text> </xsl:text>
 						<xsl:value-of select="substring-after(../../../Point/coordinates, ',')"/>
-						<xsl:text>)', 0), </xsl:text>
+						<xsl:text>)', 4326), </xsl:text>
 						
 						<!-- StationNr -->
 						<xsl:for-each select="../SimpleData">
