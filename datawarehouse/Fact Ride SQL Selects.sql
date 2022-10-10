@@ -56,8 +56,8 @@ SELECT TOP (1000) *
   JOIN dimLocks dl1 ON fr.START_DIM_LOCK_SK = dl1.LockSK
   JOIN dimLocks dl2 ON fr.END_DIM_LOCK_SK = dl2.LockSK
   WHERE dl1.StationId IS NOT NULL
-  AND dl1.Street != 'ONTBREKEND'
-  AND dl2.Street != 'ONTBREKEND'
+  /*AND dl1.Street != 'ONTBREKEND'*/
+  /*AND dl2.Street != 'ONTBREKEND'*/
   AND dl1.StationId != dl2.StationId
   GROUP BY fr.START_DIM_LOCK_SK, fr.END_DIM_LOCK_SK, dl1.Street, dl1.District, dl2.Street, dl2.District
   ORDER BY COUNT(RIDE_ID) DESC;
