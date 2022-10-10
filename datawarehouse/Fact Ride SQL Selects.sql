@@ -5,17 +5,10 @@
       ,(cast([STARTPOINT_MV] as geometry)).STDistance(cast([ENDPOINT_MV] as geometry)) 'distance'
   FROM [velo_dwh].[dbo].[factRide]
 
-  DECLARE @location geometry = 'POINT(51.193271157685444 4.433102615599496)';
-  SELECT v.VehicleId, Point.STDistance(@location) as afstand
-  FROM (SELECT * FROM [velo_op].[dbo].[Vehicles]) v
+  DECLARE @location geography = 'POINT(51.193271157685444 4.433102615599496)';
+  SELECT v.VehicleId, @location.STDistance(v.Point.ToString()) as afstand
+  FROM [velo_op].[dbo].[Vehicles] v
   ORDER BY afstand DESC;
-
-  /* Wat zijn de drukke momenten (op weekbasis) in de week t.o.v. het weekend? */
-  SELECT d.Weekday, COUNT(*) as 'aantal ritten'
-  FROM factRide f
-  JOIN dimDate d on d.Date_SK = f.DIM_DATE_SK
-  GROUP BY d.Weekday, d.DayOfWeek
-  ORDER BY d.DayOfWeek;
   
   /* Wat zijn de drukke momenten (op dagbasis) in de week t.o.v. het weekend? */
   SELECT d.Weekday, COUNT(*) AS 'Piekritten per uur', CONCAT(FORMAT(f.STARTTIME_MV, 'HH'), 'h') AS 'HOUR'
@@ -35,7 +28,14 @@
   ORDER BY d.DayOfWeek;
 
   /* Hebben datumparameters invloed op de afgelegde afstand? */
-  
+  SELECT d.Weekday,
+  ROUND(SUM((cast(f.STARTPOINT_MV as geography)).STDistance(cast(f.ENDPOINT_MV as geography))) / 1000, 2) AS 'Totale afstand (km)',
+  ROUND(SUM((cast(f.STARTPOINT_MV as geography)).STDistance(cast(f.ENDPOINT_MV as geography))) / 1000 / COUNT(*), 2) AS 'Gemiddelde afstand (km)',
+  COUNT(*) as 'aantal ritten'
+  FROM factRide f
+  JOIN dimDate d on d.Date_SK = f.DIM_DATE_SK
+  GROUP BY d.Weekday, d.DayOfWeek
+  ORDER BY d.DayOfWeek;
 
   /* Heeft weer invloed op ritten? */
   SELECT COUNT(*) as 'aantal ritten', w.weer
@@ -108,9 +108,9 @@
   /* Na hoeveel rides gaat een vehicle gemiddeld in maintenance. */
   SELECT COUNT(*) /
 	  (SELECT 
-	  COUNT (*) AS 'Gemiddeld aantal rides voor maintenance'
+	  COUNT (*)
 	  FROM factRide
-	  where DIM_USER_SK = 0)
+	  where DIM_USER_SK = 0) AS 'Gemiddeld aantal rides voor maintenance'
   from factRide;
 
   /* Gemiddelde rides actief op dezelfde moment */
