@@ -99,9 +99,3 @@ FOR VALUES (1, 2,3,4,5,6,7);
 CREATE PARTITION SCHEME DateRangePS
 AS PARTITION DateRangesPS 
 TO (dimday_maandag,dimday_dinsdag,dimday_woensdag,dimday_donderdag,dimday_vrijdag,dimday_zaterdag,dimday_zondag);
-
-SELECT 
-	name as filename,
-	physical_name as file_path
-FROM sys.database_files
-where type_desc = 'ROWS';
