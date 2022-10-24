@@ -29,8 +29,8 @@
 
   /* Hebben datumparameters invloed op de afgelegde afstand? */
   SELECT d.Weekday,
-  ROUND(SUM((cast(f.STARTPOINT_MV as geography)).STDistance(cast(f.ENDPOINT_MV as geography))) / 1000, 2) AS 'Totale afstand (km)',
-  ROUND(SUM((cast(f.STARTPOINT_MV as geography)).STDistance(cast(f.ENDPOINT_MV as geography))) / 1000 / COUNT(*), 2) AS 'Gemiddelde afstand (km)',
+  ROUND(SUM(DISTANCE_MV) / 1000, 2) AS 'Totale afstand (km)',
+  ROUND(SUM(DISTANCE_MV) / 1000 / COUNT(*), 2) AS 'Gemiddelde afstand (km)',
   COUNT(*) as 'aantal ritten'
   FROM factRide f
   JOIN dimDate d on d.Date_SK = f.DIM_DATE_SK

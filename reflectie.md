@@ -24,7 +24,7 @@ We zijn ook al aan de fact gekomen en hier zijn we op heel veel null data gestot
 - 1 rij bij locks dimensie met slot was ook onduidelijk (uiteindelijk gewoon allemaal NULL waarden in gemaakt en additional info)  
 - Bij de backup zat al user DB3 zonder password, maar talend aanvaard geen users zonder login.  
 - De Context vars waren even zoeken omdat ze pas op het einde vermeld werden   
-  
+
 **Status:**  
 Transformatie: 90%  
 ETL DWH Dimensies: 85%  
@@ -34,16 +34,16 @@ NOSQL Databank: 0%
 ### Zelfreflectie (na feedbackmoment)   
 **Reflectie**  
 Zeker de fact tabel nog eens bekijken en opsplitsen, aantal vragen zijn beantwoord en zijn nu duidelijker. We waren goed bezig, dit tempo vasthouden.  
-   
+
 **Todo's, Advies en waarschuwingen**  
 *Transformatie (xsl):*  
 join maken en tabel maken om te vergelijken, en kijken of het er 301 zijn  
 wordt it die placemark count niet overgeslagen na een if  
 for loop met condition voor counter bij te houden ipv placemark  
-  
+
 *DWH (dimensies):*  
 Alle dimensies waren in orde
-  
+
 *DWH (feit):*  
 De koppeling tussen feit en dimCustomers kun je nog beter maken door start en eind datum van de rit tussen de subscription als expressie te gebruiken  
 De koppeling tussen feit (weatherhistory) en dimWeather mag je gewoon met de fk doen  
@@ -51,23 +51,42 @@ Feit tabel opspliten met koppeling (FKs) tussen dimensies.
 Er ontbreken ook enkele waarden (NULL) die er niet mogen zijn.  
 Analysevragen beantwoorden mag met SQL statement  
 Afstandberekenen mag in het SELECT statement  
-  
+
 
 ## Milestone #2
 ### Vooruitgang (voor feedbackmoment)
-### Zelfreflectie (na feedbackmoment)
-**Wat gaat er goed en minder goed**  
-  
-**Todo's**  
-  
-**Advies en waarschuwingen**  
+Na de vorige feedback zijn we aan de slag gegaan met de verkregen informatie. De joins op datums waren een behoorlijk probleem. Hiervoor hebben we een vraag gesteld en hebben we dit samen met de docent bekeken. De uiteindelijk conslusie was om de datums gewoon als string te vergelijken. De analyse queries verliepen ook soepel. Deze waren een beetje te vaag dus deze hebben we te veel uitgewerkt.  
+
+Verder was Maxim naar budapest in week 5 voor een project voor het vak technologie en samenleving. Gelukkig hadden we al enige voorsprong om deze week op te vangen. Voor vertrek hebben we de optimalisatie technieken samen bekeken. Bij terugkomst zouden we deze implementeren. In W5 is Jonas al begonnen aan de NOSQL case van mongodb.  
+
+**Struikelblokken:**
+- Datums vergelijken in Talend  
+- Afstand berekenen telkens in SQL statement
+
+**Status:**  
+Transformatie: 90%  
+ETL DWH Dimensies: 95%  
+ETL DWH Feit & Analyse: 95%  
+Optimalisatie: 50%  
+NOSQL Databank: 20%  
+
+### Zelfreflectie (na feedbackmoment)   
+**Reflectie**  
+Ondanks de gemiste week zitten we toch op schema. Doe zo verder.  
+
+**Todo's, Advies en waarschuwingen**  
+*DWH (feit & analysevragen):*  
+Agregatie op POINTS is niet nodig, inlezen van de distance kan meteen in de fact. Start en endpoint zijn geen Measure values.  
+
+
 
 ## Milestone #3 : Examen
-### Vooruitgang (voor feedbackmoment)
+### Vooruitgang (voor feedbackmoment)  
+We hebben nog heel wat werk verzet voor deze milestone. Het was een hele opgave maar we hebben het naar onze mening goed volbracht.
+
 ### Zelfreflectie
 **Wat gaat er goed en minder goed**  
-  
-**Todo's**  
-  
-**Advies en waarschuwingen**  
 
+**Todo's**  
+
+**Advies en waarschuwingen**  
