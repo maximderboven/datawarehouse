@@ -1,101 +1,60 @@
--- voor elke weekdag een filegroep aanmaken
+-- een filegroep aanmaken
 ALTER DATABASE velo_dwh
-ADD FILEGROUP fg_maandag;
+ADD FILEGROUP fg1;
 
 ALTER DATABASE velo_dwh
-ADD FILEGROUP fg_dinsdag;
+ADD FILEGROUP fg2;
 
 ALTER DATABASE velo_dwh
-ADD FILEGROUP fg_woensdag;
+ADD FILEGROUP fg3;
 
 ALTER DATABASE velo_dwh
-ADD FILEGROUP fg_donderdag;
-
-ALTER DATABASE velo_dwh
-ADD FILEGROUP fg_vrijdag;
-
-ALTER DATABASE velo_dwh
-ADD FILEGROUP fg_zaterdag;
-
-ALTER DATABASE velo_dwh
-ADD FILEGROUP fg_zondag;
+ADD FILEGROUP fg4;
 
 -- per filegroep een bestand
 ALTER DATABASE velo_dwh
 ADD FILE (
-    NAME = dat_maandag,
-    FILENAME = '/var/opt/mssql/data/dat_maandag.ndf',
+    NAME = dat1,
+    FILENAME = '/var/opt/mssql/data/dat1.ndf',
         SIZE = 5 MB,
         MAXSIZE = UNLIMITED,
         FILEGROWTH = 1024KB
 		)
-TO FILEGROUP fg_maandag;
+TO FILEGROUP fg1;
 
 ALTER DATABASE velo_dwh
 ADD FILE (
-    NAME = dat_dinsdag,
-    FILENAME = '/var/opt/mssql/data/dat_dinsdag.ndf',
+    NAME = dat2,
+    FILENAME = '/var/opt/mssql/data/dat2.ndf',
         SIZE = 5 MB,
         MAXSIZE = UNLIMITED,
         FILEGROWTH = 1024KB
 		)
-TO FILEGROUP fg_dinsdag;
+TO FILEGROUP fg2;
 
 ALTER DATABASE velo_dwh
 ADD FILE (
-    NAME = dat_woensdag,
-    FILENAME = '/var/opt/mssql/data/dat_woensdag.ndf',
+    NAME = dat3,
+    FILENAME = '/var/opt/mssql/data/dat3.ndf',
         SIZE = 5 MB,
         MAXSIZE = UNLIMITED,
         FILEGROWTH = 1024KB
 		)
-TO FILEGROUP fg_woensdag;
+TO FILEGROUP fg3;
 
 ALTER DATABASE velo_dwh
 ADD FILE (
-    NAME = dat_donderdag,
-    FILENAME = '/var/opt/mssql/data/dat_donderdag.ndf',
+    NAME = dat4,
+    FILENAME = '/var/opt/mssql/data/dat4.ndf',
         SIZE = 5 MB,
         MAXSIZE = UNLIMITED,
         FILEGROWTH = 1024KB
 		)
-TO FILEGROUP fg_donderdag;
+TO FILEGROUP fg4;
 
-ALTER DATABASE velo_dwh
-ADD FILE (
-    NAME = dat_vrijdag,
-    FILENAME = '/var/opt/mssql/data/dat_vrijdag.ndf',
-        SIZE = 5 MB,
-        MAXSIZE = UNLIMITED,
-        FILEGROWTH = 1024KB
-		)
-TO FILEGROUP fg_vrijdag;
+CREATE PARTITION FUNCTION DateRangesMonths (datetime) AS RANGE RIGHT
+FOR VALUES (N'2015-08-01T00:00:00.000',N'2015-09-01T00:00:00.000', N'2015-10-01T00:00:00.000');
 
-ALTER DATABASE velo_dwh
-ADD FILE (
-    NAME = dat_zaterdag,
-    FILENAME = '/var/opt/mssql/data/dat_zaterdag.ndf',
-        SIZE = 5 MB,
-        MAXSIZE = UNLIMITED,
-        FILEGROWTH = 1024KB
-		)
-TO FILEGROUP fg_zaterdag;
-
-ALTER DATABASE velo_dwh
-ADD FILE (
-    NAME = dat_zondag,
-    FILENAME = '/var/opt/mssql/data/dat_zondag.ndf',
-        SIZE = 5 MB,
-        MAXSIZE = UNLIMITED,
-        FILEGROWTH = 1024KB
-		)
-TO FILEGROUP fg_zondag;
-
-
-CREATE PARTITION FUNCTION dateRanges (int)
-AS RANGE LEFT
-FOR VALUES (1,2,3,4,5,6);
-
-CREATE PARTITION SCHEME DateRangePS
-AS PARTITION dateRanges
-TO (fg_maandag,fg_dinsdag,fg_woensdag,fg_donderdag,fg_vrijdag,fg_zaterdag,fg_zondag);
+CREATE PARTITION SCHEME DateRangesMonthsPS
+AS PARTITION DateRangesMonths
+TO (fg1,fg2,fg3,fg4);

@@ -1,0 +1,41 @@
+
+USERID ZOEKEN
+-------------
+GET https://localhost:9200/index_comments/_search
+{
+  "query": {
+    "match": {
+      "UserId": {
+          "query": "8"
+      }
+    }
+  }
+}
+
+NAME ZOEKEN
+-----------
+GET https://localhost:9200/index_comments/_search
+{
+  "query": {
+    "match": {
+      "Name": {
+          "query": "Aarts Alexanded",
+          "fuzziness": "AUTO"
+      }
+    }
+  }
+}
+
+TWEET ZOEKEN
+------------
+{
+  "query": {
+    "wildcard": {
+      "Tweet": {
+        "value": "*test*",
+        "boost": 1.0,
+        "rewrite": "constant_score"
+      }
+    }
+  }
+}

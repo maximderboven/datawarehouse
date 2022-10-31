@@ -54,6 +54,12 @@
   GROUP BY c.ZipCode
   ORDER BY 3 DESC;
 
+  SELECT c.ZipCode, c.City, c.CountryCode, COUNT_BIG(*) AS 'Aantal Ritten'
+  FROM dbo.factRide f
+  JOIN dbo.dimCustomers c on f.DIM_USER_SK = c.userRepSK
+  GROUP BY c.ZipCode, c.City, c.CountryCode
+  ORDER BY 4 DESC;
+
   /* Verschilt de populairste vertrekplek in het weekend tegenover in de week */
   SELECT
   l.Street as 'Station',
@@ -132,13 +138,14 @@
   GROUP BY fr.START_DIM_LOCK_SK, fr.END_DIM_LOCK_SK, dl1.Street, dl1.District, dl2.Street, dl2.District
   ORDER BY COUNT(RIDE_ID) DESC;
   
-  /* Welke customer heeft al de meeste tijd op een vehicle gezeten */
+  /* Welke customer heeft al de meeste tijd op een vehicle gezeten in oktober */
   SELECT TOP 1 c.Name AS 'Name',
   SUM(f.DURATION_MV / 60000) as 'totaal tijd (min).',
   count(*) as 'Totaal ritten',
   SUM(f.DURATION_MV / 60000) /  count(*) as 'Gemiddelde tijd per rit (min)'
   from factRide f
   join dimCustomers c on f.DIM_USER_SK = c.userRepSK
+  WHERE f.STARTTIME_MV BETWEEN '2015-09-01' AND '2015-09-30'
   GROUP BY f.DIM_USER_SK, c.Name
   ORDER BY COUNT(f.DURATION_MV) DESC
   

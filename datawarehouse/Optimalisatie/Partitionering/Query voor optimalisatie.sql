@@ -1,8 +1,10 @@
-  SELECT d.Weekday,
-  ROUND(SUM(DISTANCE_MV) / 1000, 2) AS 'Totale afstand (km)',
-  ROUND(SUM(DISTANCE_MV) / 1000 / COUNT(*), 2) AS 'Gemiddelde afstand (km)',
-  COUNT(*) as 'aantal ritten'
-  FROM factRide f
-  JOIN dimDate d on d.Date_SK = f.DIM_DATE_SK
-  GROUP BY d.Weekday, d.DayOfWeek
-  ORDER BY d.DayOfWeek;
+  /* Welke customer heeft al de meeste tijd op een vehicle gezeten in de eerste week van oktober */
+  SELECT TOP 1 c.Name AS 'Name',
+  SUM(f.DURATION_MV / 60000) as 'totaal tijd (min).',
+  count(*) as 'Totaal ritten',
+  SUM(f.DURATION_MV / 60000) /  count(*) as 'Gemiddelde tijd per rit (min)'
+  from factRide f
+  join dimCustomers c on f.DIM_USER_SK = c.userRepSK
+  WHERE f.STARTTIME_MV BETWEEN '2015-09-01' AND '2015-09-30'
+  GROUP BY f.DIM_USER_SK, c.Name
+  ORDER BY COUNT(f.DURATION_MV) DESC
