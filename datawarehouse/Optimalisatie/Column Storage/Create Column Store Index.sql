@@ -1,0 +1,3 @@
+CREATE COLUMNSTORE INDEX ColumnStoreIndexOnlocks
+ON dbo.factRide (START_DIM_LOCK_SK, END_DIM_LOCK_SK);
+
