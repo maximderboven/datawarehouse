@@ -72,7 +72,7 @@ NOSQL Databank: 20%
 
 ### Zelfreflectie (na feedbackmoment)   
 **Reflectie**  
-Ondanks de gemiste week zitten we toch op schema. Doe zo verder.  
+Ondanks de gemiste week zitten we toch op schema.  
 
 **Todo's, Advies en waarschuwingen**  
 *DWH (feit & analysevragen):*  
@@ -82,11 +82,4 @@ Agregatie op POINTS is niet nodig, inlezen van de distance kan meteen in de fact
 
 ## Milestone #3 : Examen
 ### Vooruitgang (voor feedbackmoment)  
-We hebben nog heel wat werk verzet voor deze milestone. Het was een hele opgave maar we hebben het naar onze mening goed volbracht.
-
-### Zelfreflectie
-**Wat gaat er goed en minder goed**  
-
-**Todo's**  
-
-**Advies en waarschuwingen**  
+Uitgebreide documentatie voor optimalisatie. NOSQL in elasticsearch was een opgave om uit te zoeken. Data inlezen is door middel van een csv export en zou eventueel automatisch kunnen et JDBC. Elastic search heeft eenuitgebreid aanbod aan opties en met zo een beknopte opagave is het niet duidelijk wat er juist verwacht wordt. Doordat ik een week ben weg geweest naar Hongarije heb ik ook een hoop uitleg gemist. We hebben nog heel wat werk verzet voor deze milestone. Het was een hele opgave maar we hebben het naar onze mening goed volbracht. 
