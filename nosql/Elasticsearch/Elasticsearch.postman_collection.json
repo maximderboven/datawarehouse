@@ -16,7 +16,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"query\": {\r\n    \"match\": {\r\n      \"UserId\": {\r\n          \"query\": \"8\"\r\n      }\r\n    }\r\n  }\r\n}",
+					"raw": "{\r\n  \"query\": {\r\n    \"bool\": { \r\n        \"filter\": [ \r\n            {\r\n            \"match\": {\r\n                \"UserId\": {\r\n                    \"query\": \"8\",\r\n                    \"minimum_should_match\": 1\r\n                    }\r\n                }\r\n            }\r\n        ]}\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -48,7 +48,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"query\": {\r\n    \"match\": {\r\n      \"Name\": {\r\n          \"query\": \"Aarts Alexanded\",\r\n          \"fuzziness\": \"AUTO\"\r\n      }\r\n    }\r\n  }\r\n}",
+					"raw": "{\r\n  \"query\": {\r\n    \"match\": {\r\n      \"Name\": {\r\n          \"query\": \"Arts Dim\",\r\n          \"fuzziness\": \"AUTO\"\r\n      }\r\n    }\r\n  }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -80,7 +80,39 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"query\": {\r\n    \"wildcard\": {\r\n      \"Tweet\": {\r\n        \"value\": \"*test*\",\r\n        \"boost\": 1.0,\r\n        \"rewrite\": \"constant_score\"\r\n      }\r\n    }\r\n  }\r\n}",
+					"raw": "{\r\n    \"sort\": [\r\n        {\r\n            \"_score\": {\r\n                \"order\": \"DESC\"\r\n                }\r\n            }],\r\n    \"query\": {\r\n        \"match_phrase\": {\r\n            \"Tweet\": {\r\n                \"query\" : \"sad day\",\r\n                \"slop\": 10\r\n            }\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:9200/index_comments/_search",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"index_comments",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test_Documentantie",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"_source\": [\"UserId\",\"Name\",\"Tweet\"], \r\n  \"sort\": [\r\n    {\r\n      \"Name\": {\r\n        \"order\": \"ASC\"\r\n      }\r\n    }\r\n  ]\r\n\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

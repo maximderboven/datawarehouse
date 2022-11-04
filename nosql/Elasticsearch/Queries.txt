@@ -4,12 +4,18 @@ USERID ZOEKEN
 GET https://localhost:9200/index_comments/_search
 {
   "query": {
-    "match": {
-      "UserId": {
-          "query": "8"
-      }
+    "bool": { 
+        "filter": [ 
+            {
+            "match": {
+                "UserId": {
+                    "query": "8",
+                    "minimum_should_match": 1
+                    }
+                }
+            }
+        ]}
     }
-  }
 }
 
 NAME ZOEKEN
@@ -19,7 +25,7 @@ GET https://localhost:9200/index_comments/_search
   "query": {
     "match": {
       "Name": {
-          "query": "Aarts Alexanded",
+          "query": "Arts Dim",
           "fuzziness": "AUTO"
       }
     }
@@ -29,13 +35,18 @@ GET https://localhost:9200/index_comments/_search
 TWEET ZOEKEN
 ------------
 {
-  "query": {
-    "wildcard": {
-      "Tweet": {
-        "value": "*test*",
-        "boost": 1.0,
-        "rewrite": "constant_score"
-      }
+    "sort": [
+        {
+            "_score": {
+                "order": "DESC"
+                }
+            }],
+    "query": {
+        "match_phrase": {
+            "Tweet": {
+                "query" : "sad day",
+                "slop": 10
+            }
+        }
     }
-  }
 }
