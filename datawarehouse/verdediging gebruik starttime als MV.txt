@@ -1,0 +1,2 @@
+Voor de query  "Wat zijn de drukke momenten (op dagbasis) in de week t.o.v. het weekend?"
+Hebben we de uren nodig, hiervoor is de startTime nodig. Enkel een dag is voor deze analyse vraag niet voldoende.
