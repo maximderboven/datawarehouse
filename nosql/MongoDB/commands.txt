@@ -1,13 +1,11 @@
-// Start mongoDB server
-mongodb --port 27017 --dbpath "C:\Program Files\MongoDB\Server\5.0\data" --replSet cfg --bind_ip localhost
 // Configs folders
 mkdir cfg0 cfg1 cfg2
 // Sharding folders
-mkdir a0 a1 a2 b0 b1 b2 c0 c1 c2 d0 d1 d2
+mkdir a0 a1 a2 b0 b1 b2
 // Starting config servers in cmd's
-mongod --configsvr --port 6900 --bind_ip localhost --replSet cfg --dbpath "configs/cfg0"
-mongod --configsvr --port 6901 --bind_ip localhost --replSet cfg --dbpath "configs/cfg1"
-mongod --configsvr --port 6902 --bind_ip localhost --replSet cfg --dbpath "configs/cfg2"
+START "Config server 0 (cfg0)" mongod --configsvr --port 6900 --bind_ip localhost --replSet cfg --dbpath "configs/cfg0"
+START "Config server 1 (cfg1)" mongod --configsvr --port 6901 --bind_ip localhost --replSet cfg --dbpath "configs/cfg1"
+START "Config server 2 (cfg2)" mongod --configsvr --port 6902 --bind_ip localhost --replSet cfg --dbpath "configs/cfg2"
 // open mongosh
 mongosh --host localhost --port 6900
 // Configure replicaset
@@ -33,9 +31,9 @@ rsconf = {
 rs.initiate(rsconf)
 
 // Configure first shard
-mongod --shardsvr --port 7000 --bind_ip localhost --replSet shrds --dbpath "shards\a0"
-mongod --shardsvr --port 7001 --bind_ip localhost --replSet shrds --dbpath "shards\a1"
-mongod --shardsvr --port 7002 --bind_ip localhost --replSet shrds --dbpath "shards\a2"
+START "Shard server A0 (a0)" mongod --shardsvr --port 7000 --bind_ip localhost --replSet shrds --dbpath "shards\a0"
+START "Shard server A1 (a1)" mongod --shardsvr --port 7001 --bind_ip localhost --replSet shrds --dbpath "shards\a1"
+START "Shard server A2 (a2)" mongod --shardsvr --port 7002 --bind_ip localhost --replSet shrds --dbpath "shards\a2"
 
 mongosh --host localhost  --port 7000
 rsconf = {
@@ -61,9 +59,9 @@ rs.status
 
 // repeat for other shard
 
-mongod --shardsvr --port 7100 --bind_ip localhost --replSet shrds1 --dbpath "shards\b0"
-mongod --shardsvr --port 7101 --bind_ip localhost --replSet shrds1 --dbpath "shards\b1"
-mongod --shardsvr --port 7102 --bind_ip localhost --replSet shrds1 --dbpath "shards\b2"
+START "Shard server B0 (b0)" mongod --shardsvr --port 7100 --bind_ip localhost --replSet shrds1 --dbpath "shards\b0"
+START "Shard server B1 (b1)" mongod --shardsvr --port 7101 --bind_ip localhost --replSet shrds1 --dbpath "shards\b1"
+START "Shard server B2 (b2)" mongod --shardsvr --port 7102 --bind_ip localhost --replSet shrds1 --dbpath "shards\b2"
 
 mongosh --host localhost  --port 7100
 rsconf = {
@@ -88,7 +86,7 @@ rs.initiate(rsconf)
 rs.status
 
 // Start cluster from config replicaset
-mongos --configdb cfg/localhost:6900,localhost:6901,localhost:6902 --bind_ip localhost --port 6969
+START "Mongos server" mongos --configdb cfg/localhost:6900,localhost:6901,localhost:6902 --bind_ip localhost --port 6969
 
 // Add shards to cluster
 mongosh --host localhost --port 6969
@@ -98,6 +96,8 @@ sh.addShard("shrds1/localhost:7100,localhost:7101,localhost:7102")
 
 // enable sharding on rides collection
 sh.enableSharding("rides")
+
+// Maak velo database en rides collection aan in mongodbcompass
 sh.shardCollection("velo.rides", {"BeginStationId": 1})
 
 // chunksize aanpassen naar de kleinere dataset
@@ -116,8 +116,19 @@ sh.balancerCollectionStatus("velo.rides")
 db.rides.getShardDistribution ()
 
 
-SELECT uitvoeren op db met BeginStationId
-en exporteren naar de een csv
+SELECT uitvoeren op db met BeginStationId en exporteren naar de een csv
+SELECT [RideId]
+      ,[StartPoint]
+      ,[EndPoint]
+      ,[StartTime]
+      ,[EndTime]
+      ,R.[VehicleId]
+      ,[SubscriptionId]
+      ,[Startlockid]
+      ,[EndLockId]
+	  ,L.StationId as 'BeginStationId'
+  FROM [velo_op].[dbo].[Rides] R
+  JOIN Locks L on r.Startlockid = l.LockId
 
 // Importeren vie mongodbcompass
 			
