@@ -2,7 +2,6 @@
 
   /* SELECT OP DE WAREHOUSE */
   SELECT TOP (1000) *
-      ,(cast([STARTPOINT_MV] as geometry)).STDistance(cast([ENDPOINT_MV] as geometry)) 'distance'
   FROM [velo_dwh].[dbo].[factRide]
 
   DECLARE @location geography = 'POINT(51.193271157685444 4.433102615599496)';
