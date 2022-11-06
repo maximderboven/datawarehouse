@@ -113,9 +113,6 @@ use velo
 // Check chunk size
 sh.balancerCollectionStatus("velo.rides")
 
-db.rides.getShardDistribution ()
-
-
 SELECT uitvoeren op db met BeginStationId en exporteren naar de een csv
 SELECT [RideId]
       ,[StartPoint]
@@ -130,7 +127,10 @@ SELECT [RideId]
   FROM [velo_op].[dbo].[Rides] R
   JOIN Locks L on r.Startlockid = l.LockId
 
-// Importeren vie mongodbcompass
+// Importeren via mongodbcompass
+
+// Kijk of de data in de sharding 
+db.rides.getShardDistribution ()
 			
 // Alle documenten uit collection verwijderen
 db.rides.deleteMany({})
