@@ -1,0 +1,12 @@
+LAPTOP:
+HWtC_vCZG8AjhX7RPQoA
+
+DESKTOP:
+C-k-N9ZdqIYplqWc624w
+
+KIBANA:
+http://localhost:5601/login?next=%2F
+
+FIX for bootstrap error es
+wsl -d docker-desktop
+sysctl -w vm.max_map_count=262144
