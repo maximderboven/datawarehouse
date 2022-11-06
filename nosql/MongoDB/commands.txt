@@ -96,6 +96,9 @@ mongosh --host localhost --port 6969
 sh.addShard("shrds/localhost:7000,localhost:7001,localhost:7002")
 sh.addShard("shrds1/localhost:7100,localhost:7101,localhost:7102")
 
+// enable sharding on rides collection
+sh.enableSharding("rides")
+sh.shardCollection("velo.rides", {"BeginStationId": 1})
 
 // chunksize aanpassen naar de kleinere dataset
 use config
@@ -106,6 +109,8 @@ db.settings.updateOne(
     { upsert: true }
 )
 use velo
+
+// Check chunk size
 sh.balancerCollectionStatus("velo.rides")
 
 db.rides.getShardDistribution ()
@@ -113,8 +118,8 @@ db.rides.getShardDistribution ()
 
 SELECT uitvoeren op db met BeginStationId
 en exporteren naar de een csv
+
+// Importeren vie mongodbcompass
 			
 // Alle documenten uit collection verwijderen
-
-
 db.rides.deleteMany({})
