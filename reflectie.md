@@ -82,4 +82,12 @@ Agregatie op POINTS is niet nodig, inlezen van de distance kan meteen in de fact
 
 ## Milestone #3 : Examen
 ### Vooruitgang (voor feedbackmoment)  
-Uitgebreide documentatie voor optimalisatie. NOSQL in elasticsearch was een opgave om uit te zoeken. Data inlezen is door middel van een csv export en zou eventueel automatisch kunnen et JDBC. Elastic search heeft eenuitgebreid aanbod aan opties en met zo een beknopte opagave is het niet duidelijk wat er juist verwacht wordt. Doordat ik een week ben weg geweest naar Hongarije heb ik ook een hoop uitleg gemist. We hebben nog heel wat werk verzet voor deze milestone. Het was een hele opgave maar we hebben het naar onze mening goed volbracht. 
+Uitgebreide documentatie voor optimalisatie. NOSQL in elasticsearch was een opgave om uit te zoeken. Data inlezen is door middel van een csv export en zou eventueel automatisch kunnen met JDBC. Elastic search heeft een uitgebreid aanbod aan opties en met zo een beknopte opagave is het niet duidelijk wat er juist verwacht wordt. Doordat ik een week ben weg geweest naar Hongarije heb ik ook een hoop uitleg gemist.  
+Voor de opleveringen hebben we alles nog een van 0 uitgevoerd om er zeker van te zijn dat alles werkt. Hier kwamen we nog een fout tegen in de transformatie. Deze hebben we dan ook opgelost.  
+We hebben nog heel wat werk verzet voor deze milestone. Het was een hele opgave maar we hebben het naar onze mening goed volbracht. 
+  
+  
+### Zelfreflectie (na feedbackmoment)   
+**Reflectie**  
+  
+**Todo's, Advies en waarschuwingen**  
